@@ -2,6 +2,8 @@ const router = require("express").Router();
 
 const Users = require("./users-model.js");
 
+
+
 router.get("/", (req, res) => {
   Users.find()
     .then(users => {
@@ -11,5 +13,6 @@ router.get("/", (req, res) => {
       res.status(500).json({error: err.message})
     });
 });
+
 
 module.exports = router;
